@@ -51,7 +51,7 @@ def downloadVideo(masterJsonUrl, videoName, childPath):
                 segment_url = audioBaseUrl + segment["url"].replace("\u0026", "&")
                 response = requests.get(segment_url, stream=True)
                 if response.status_code != 200:
-                    print(resp)
+                    print(response)
                     break
                 for chunk in response:
                     file.write(chunk)
