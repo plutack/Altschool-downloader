@@ -79,7 +79,8 @@ for folder in videoList:
         data = response.json()
         masterJsonUrl = data['request']['files']['dash']['cdns']['fastly_skyfire']['avc_url']
         downloadVideo(masterJsonUrl, videoName, childPath)
-        print("study kit downloaded successfully!")
+
+print("study kit downloaded successfully!")
 
 
 
