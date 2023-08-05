@@ -57,12 +57,14 @@ def downloadVideo(masterJsonUrl, videoName, childPath):
     try:
         inputVideo = ffmpeg.input(filenameVideo)
         inputAudio = ffmpeg.input(filenameAudio)
-        ffmpeg.concat(inputVideo, inputAudio, v=1, a=1).output(os.path.join(childPath, videoName)).run()
-        print("Merge complete!\nVIDEO DOWNLOADED SUCCESSFULLY")
+        if os.path.exists(os.path.join(childPath, videoName):
+            ffmpeg.concat(inputVideo, inputAudio, v=1, a=1).output(os.path.join(childPath, videoName)).run() 
+            print("Merge completed!\nVideo saved successfully")
+        else:
+            print("Video exists"} 
     except ffmpeg.Error as error:
         print(error.stderr)
 
-    print("Temporary files removed!")
     os.remove(filenameVideo)
     os.remove(filenameAudio)
-    
+    print("Temporary files removed!")    
