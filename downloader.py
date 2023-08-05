@@ -19,7 +19,7 @@ def downloadVideo(masterJsonUrl, videoName, childPath):
     idx = max(heights, key=lambda x: x[1])
     video = content['video'][idx[0]]
     videoBaseUrl = baseUrl + video["base_url"]
-    filenameVideo = os.path.join(childPath, f'video_{content[video["id"]]}')
+    filenameVideo = os.path.join(childPath, f'video_{video["id"]}')
     
     with open(filenameVideo, "wb") as file:
         init_segment = base64.b64decode(video["init_segment"])
@@ -39,7 +39,7 @@ def downloadVideo(masterJsonUrl, videoName, childPath):
     idx = max(bitrate, key=lambda x: x[1])
     audio = content['audio'][idx[0]]
     audioBaseUrl = baseUrl + audio["base_url"]
-    filenameAudio = os.path.join(childPath, f'audio_{content[audio["id"]]}')
+    filenameAudio = os.path.join(childPath, f'audio_{audio["id"]}')
 
     with open(filenameAudio, "wb") as file:
         init_segment = base64.b64decode(audio["init_segment"])
