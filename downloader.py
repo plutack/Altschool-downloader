@@ -15,7 +15,7 @@ def downloadVideo(masterJsonUrl, videoName, childPath):
     content = response.json()
 
     if os.path.exists(os.path.join(childPath, videoName):
-        print(f"{videoName} exists"}
+        print(f"{videoName} exists")
     else:
     # Video download here
         heights = [(i, d["height"]) for (i, d) in enumerate(content['video'])]
