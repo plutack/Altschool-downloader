@@ -27,7 +27,7 @@ def downloadVideo(masterJsonUrl, videoName, childPath):
         for segment in tqdm(video["segments"]):
             segment_url = videoBaseUrl + segment["url"].replace("\u0026", "&")
             response = requests.get(segment_url, stream=True)
-            if resp.status_code != 200:
+            if response.status_code != 200:
                 print(response)
                 break
             for chunk in response:
