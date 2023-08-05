@@ -14,7 +14,7 @@ def downloadVideo(masterJsonUrl, videoName, childPath):
     response = requests.get(masterJsonUrl)
     content = response.json()
 
-    if os.path.exists(os.path.join(childPath, videoName):
+    if os.path.exists(os.path.join(childPath, videoName) is True:
         print(f"{videoName} exists")
     else:
     # Video download here
