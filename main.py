@@ -15,7 +15,7 @@ session.post(LOGINURL, headers=headers, json=SECRET)
 
 
 CSRFTOKENURL = "https://portal.altschoolafrica.com/api/auth/csrf"
-response = session.get(CSRFTOKENURL))
+response = session.get(CSRFTOKENURL)
 csrfTokenJson = response.json()
 csrfToken = csrfTokenJson["csrfToken"]
 
