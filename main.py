@@ -68,10 +68,10 @@ for subcategory in schoolCategory:
         videoList.append(folderDict)
         
 rootPath = os.path.join(os.getcwd(), f'Altschool {courseName}')
-os.makedirs(rootPath)
+os.makedirs(rootPath, exist_ok=True)
 for folder in videoList:
     childPath = os.path.join(rootPath, folder['Topic'])
-    os.makedirs(childPath)
+    os.makedirs(childPath, exist_ok=True)
     for subtopic in folder['Subtopics']:
         videoName = f"{subtopic['name']}.mp4"
         videoUrl = subtopic['videoLink'].split('?')[0] + '/config'
